@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FN</title>
+</head>
+<body>
+    <SCRIPT>
+        //types of function
+        //normal function: with para,without para and with default
+        //normal function without parameters(define time)
+        function demo(){
+            console.log("Hello JS");
+        }
+
+        function demo1(text){
+            console.log("Helloo"+ text);
+        }
+        demo1("React")
+        demo();
+        function add(a,b){
+            console.log("Addition is"+(a+b));
+        }
+        add(123,23);
+        //sync
+        function cal(){
+        function add(a,b){
+            console.log(a+b);
+        }
+        function sub(a,b){
+            console.log(a-b);
+        }
+        function mul(a,b){
+            console.log(a*b);
+        }
+        mul(3,6);
+        sub(9,6);
+        add(3,6);
+
+    }
+    cal();
+
+
+    //Anonymous function
+    let msg=function(){
+        console.log("Hello");
+
+    }
+    msg();
+    //short code i.e arrow fn
+    let msg1=()=>console.log("hii");
+    msg1();
+    // arrow fn using multiple lines
+    let msg2=(a,b)=>{
+        var num1=a;
+        var num2=b;
+        var res=num1/num2;
+        console.log(res);
+    } 
+    msg2(10,20);
+    //IIFE:-
+    (function(){
+        console.log("hello world");
+    })();
+    (msg=>console.log())
+    // promises
+    let myPromise=new Promise(function(resolve,reject){
+        let age = 16;
+        if(age>=18){
+            resolve("valid age");
+        }
+        else{
+            reject("wait for next year")
+        }
+    });
+    myPromise.then(msg=>console.log(msg))
+    .catch(error=>console.log(error));
+    //async and await 
+    //api-text format data code embed
+    /*async function userInfo() {
+        try{
+        
+    
+    let user_data=await fetch('https://api.github.com/users/Vranda0895');
+    let response=await user_data.json();
+    console.log(response);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+    userInfo();*/
+    //higher order function map,reduce,filter,foreach
+
+    let num=[7,6,4];
+    //map
+    let square=num.map(n=>n*n);
+    console.log(square);
+    let sum=num.reduce((total,n)=>total+n);
+    console.log(sum);
+    //filter
+    let sorting=num.filter(n=>n>2);
+    console.log(sorting);
+    num.forEach(n=>console.log(n*2));
+    //local storage-
+    let myInfo={
+        name :"xyz",
+       addres :"GZB",
+       AGE: 25,
+       email: "xyz@gmail.com"
+    };
+    localStorage.setItem('myInfo', JSON.stringify(myInfo));
+    //retreive
+    let storeData= JSON.parse(localStorage.getItem('myInfo'));
+    console.log(storeData.name);
+
+
+
+    </SCRIPT>
+    
+</body>
+</html>
